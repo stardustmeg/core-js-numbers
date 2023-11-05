@@ -8,7 +8,7 @@
  ******************************************************************************************* */
 
 /**
- * Returns an area of a rectangle given by width and height.
+ * Returns an area of a rectangle given by width and height. ---------------------------------------
  *
  * @param {number} width
  * @param {number} height
@@ -23,7 +23,7 @@ function getRectangleArea(width, height) {
 }
 
 /**
- * Returns a circumference of circle given by radius.
+ * Returns a circumference of circle given by radius. ----------------------------------------------
  *
  * @param {number} radius
  * @return {number}
@@ -39,7 +39,7 @@ function getCircleCircumference(radius) {
 }
 
 /**
- * Returns an average of two given numbers.
+ * Returns an average of two given numbers. ----------------------------------------------------------
  *
  * @param {number} value1
  * @param {number} value2
@@ -50,8 +50,9 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  throw new Error('Not implemented');
+function getAverage(value1, value2) {
+  const averageValue = value1 / 2 + value2 / 2;
+  return Number.isFinite(averageValue) ? averageValue : 0;
 }
 
 /**
@@ -113,7 +114,7 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
 
 /**
  * Returns a last digit of a integer number.
- * The input parameter will always be greater than or equal to zero and will be in decimal notation.
+ * The input parameter will always be greater than or equal to zero and will be in decimal notation. --------------------
  *
  * @param {number} value
  * @return {number}
@@ -124,12 +125,12 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  return value % 10;
 }
 
 /**
- * Returns a number by given string representation.
+ * Returns a number by given string representation. ----------------------------------------------
  *
  * @param {string} value
  * @return {number}
@@ -139,8 +140,8 @@ function getLastDigit(/* value */) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(/* value */) {
-  throw new Error('Not implemented');
+function parseNumberFromString(value) {
+  return +value;
 }
 
 /**
@@ -161,7 +162,7 @@ function getParallelepipedDiagonal(/* a, b, c */) {
 }
 
 /**
- * Returns the number rounded to specified power of 10.
+ * Returns the number rounded to specified power of 10. ?????????????????????????????????????????
  *
  * @param {number} num
  * @param {number} pow
@@ -179,6 +180,7 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  */
 function roundToPowerOfTen(/* num, pow */) {
   throw new Error('Not implemented');
+  // return Math.round(num / num ** 10 * pow) * num ** 10 * pow;
 }
 
 /**
@@ -222,7 +224,7 @@ function toNumber(/* value, def */) {
 }
 
 /**
- * Returns the cube of the given number.
+ * Returns the cube of the given number. -------------------------------
  *
  * @param {number} num
  * @return {number}
@@ -232,8 +234,8 @@ function toNumber(/* value, def */) {
  *   -2 => -8
  *   0  => 0
  */
-function getCube(/* num */) {
-  throw new Error('Not implemented');
+function getCube(num) {
+  return num ** 3;
 }
 
 /**
@@ -254,7 +256,7 @@ function getFibonacciNumber(/* index */) {
 }
 
 /**
- * Returns the sum of all numbers from 1 to n.
+ * Returns the sum of all numbers from 1 to n. ------------------------------------------------
  *
  * @param {number} n
  * @return {number}
@@ -264,8 +266,9 @@ function getFibonacciNumber(/* index */) {
  *   10 => 55 // (1+2+3+...+10)
  *   1  => 1
  */
-function getSumToN(/* n */) {
-  throw new Error('Not implemented');
+function getSumToN(n) {
+  const sum = (n * (1 + n)) / 2;
+  return sum;
 }
 
 /**
@@ -421,7 +424,7 @@ function isInteger(/* number */) {
 }
 
 /**
- * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.
+ * Returns a floating point number or, if the number cannot be parsed from the argument, returns NaN.----------------------------------
  *
  * @param {string} str
  * @return {number | NaN}
@@ -430,8 +433,8 @@ function isInteger(/* number */) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+  return Number.parseFloat(str);
 }
 
 /**
