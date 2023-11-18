@@ -219,7 +219,7 @@ function isPrime(n) {
 }
 
 /**
- * Tries to convert value to number and returns it if conversion was successful;
+ * Tries to convert value to number and returns it if conversion was successful;---------------------------------------------------------------
  * otherwise returns default value passed as a second argument.
  *
  * @param {any} value
@@ -233,8 +233,9 @@ function isPrime(n) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  const converted = Number(value);
+  return Number.isNaN(converted) ? def : converted;
 }
 
 /**
@@ -308,7 +309,7 @@ function getSumOfDigits(num) {
 }
 
 /**
- * Returns true if the given number is a power of two, false otherwise.
+ * Returns true if the given number is a power of two, false otherwise.------------------------------------------------------------------
  *
  * @param {number} num
  * @return {boolean}
@@ -318,8 +319,8 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  return Number.isInteger(Math.log2(num));
 }
 
 /**
@@ -536,7 +537,7 @@ function roundToNearestInteger(number) {
 }
 
 /**
- * Returns the integer part of a number by removing any fractional digits.
+ * Returns the integer part of a number by removing any fractional digits.-----------------------------------------------------------
  *
  * @param {number} number
  * @return {number}
@@ -546,12 +547,12 @@ function roundToNearestInteger(number) {
  * 5.4  => 5
  * -5.5 => -5
  */
-function getIntegerPartNumber(/* number */) {
-  throw new Error('Not implemented');
+function getIntegerPartNumber(number) {
+  return Math.trunc(number);
 }
 
 /**
- * Returns the sum of numbers.
+ * Returns the sum of numbers.---------------------------------------------------------------------------
  *
  * @param {number} x1
  * @param {number} x2
@@ -562,12 +563,13 @@ function getIntegerPartNumber(/* number */) {
  * 1, 2, 3       => 6
  * 0.1, 0.2, 0.3 => 0.6
  */
-function getSumOfNumbers(/* x1, x2, x3 */) {
-  throw new Error('Not implemented');
+function getSumOfNumbers(x1, x2, x3) {
+  const sum = x1 + x2 + x3;
+  return parseFloat(sum.toFixed(2));
 }
 
 /**
- * Returns the largest number.
+ * Returns the largest number.--------------------------------------------------------------------------------
  *
  * @param {number} firstNumber
  * @param {number} secondNumber
@@ -578,12 +580,12 @@ function getSumOfNumbers(/* x1, x2, x3 */) {
  * -5, -6 => -5
  * 0, 5   => 5
  */
-function getMaxNumber(/* firstNumber, secondNumber */) {
-  throw new Error('Not implemented');
+function getMaxNumber(firstNumber, secondNumber) {
+  return Math.max(firstNumber, secondNumber);
 }
 
 /**
- * Returns a random integer in the range from min to max.
+ * Returns a random integer in the range from min to max.----------------------------------------------------------------------
  *
  * @param {number} min
  * @param {number} max
@@ -594,12 +596,13 @@ function getMaxNumber(/* firstNumber, secondNumber */) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
-  throw new Error('Not implemented');
+function getRandomInteger(min, max) {
+  const random = Math.floor(Math.random() * (max - min + 1)) + min;
+  return random;
 }
 
 /**
- * Returns the length of the hypotenuse of a right triangle.
+ * Returns the length of the hypotenuse of a right triangle.-------------------------------------------------------------
  *
  * @param {number} a
  * @param {number} b
@@ -608,12 +611,12 @@ function getRandomInteger(/* min, max */) {
  * @example:
  * 3, 4 => 5
  */
-function getHypotenuse(/* a, b */) {
-  throw new Error('Not implemented');
+function getHypotenuse(a, b) {
+  return Math.hypot(a, b);
 }
 
 /**
- * Returns count of odd numbers from zero to the resulting number.
+ * Returns count of odd numbers from zero to the resulting number.-------------------------------------------------------------------
  * The resulting number is taken into account.
  *
  * @param {number} number
@@ -625,8 +628,14 @@ function getHypotenuse(/* a, b */) {
  * 10 => 5
  * 15 => 8
  */
-function getCountOfOddNumbers(/* number */) {
-  throw new Error('Not implemented');
+function getCountOfOddNumbers(number) {
+  let count = 0;
+  for (let i = 0; i <= Math.abs(number); i += 1) {
+    if (i % 2 !== 0) {
+      count += 1;
+    }
+  }
+  return count;
 }
 
 module.exports = {
