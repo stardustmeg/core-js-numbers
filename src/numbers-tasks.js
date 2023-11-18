@@ -238,7 +238,7 @@ function toNumber(/* value, def */) {
 }
 
 /**
- * Returns the cube of the given number. -------------------------------
+ * Returns the cube of the given number. ------------------------------------------------------------------------------------
  *
  * @param {number} num
  * @return {number}
@@ -253,7 +253,7 @@ function getCube(num) {
 }
 
 /**
- * Returns the Fibonacci number located at the index position.
+ * Returns the Fibonacci number located at the index position.----------------------------------------------------------------------------
  *
  * @param {number} index
  * @return {number}
@@ -265,12 +265,18 @@ function getCube(num) {
  *   3  => 2
  *   10 => 55
  */
-function getFibonacciNumber(/* index */) {
-  throw new Error('Not implemented');
+function getFibonacciNumber(index) {
+  if (index === 0) {
+    return 0;
+  }
+  if (index === 1) {
+    return 1;
+  }
+  return getFibonacciNumber(index - 1) + getFibonacciNumber(index - 2);
 }
 
 /**
- * Returns the sum of all numbers from 1 to n. ------------------------------------------------
+ * Returns the sum of all numbers from 1 to n. --------------------------------------------------------------------------------------
  *
  * @param {number} n
  * @return {number}
@@ -286,7 +292,7 @@ function getSumToN(n) {
 }
 
 /**
- * Returns the sum of the digits of a given number.
+ * Returns the sum of the digits of a given number. --------------------------------------------------------------------------
  *
  * @param {number} num
  * @return {number}
@@ -296,8 +302,9 @@ function getSumToN(n) {
  *   202 => 4  // (2+0+2)
  *   5   => 5  // 5
  */
-function getSumOfDigits(/* num */) {
-  throw new Error('Not implemented');
+function getSumOfDigits(num) {
+  const digits = num.toString().split('').map(Number);
+  return digits.reduce((sum, digit) => sum + digit, 0);
 }
 
 /**
@@ -316,7 +323,7 @@ function isPowerOfTwo(/* num */) {
 }
 
 /**
- * Returns the sine of a number.
+ * Returns the sine of a number.---------------------------------------------------------------------------------------------------------
  *
  * @param {number} num
  * @return {number}
@@ -325,12 +332,12 @@ function isPowerOfTwo(/* num */) {
  *   0 => 0
  *   Math.PI / 2 => 1
  */
-function getSine(/* num */) {
-  throw new Error('Not implemented');
+function getSine(num) {
+  return Math.sin(num);
 }
 
 /**
- * Returns a string representation of a number in a specified base (radix).
+ * Returns a string representation of a number in a specified base (radix).-----------------------------------------------------------------------
  *
  * @param {number} number
  * @param {number} base
@@ -340,8 +347,8 @@ function getSine(/* num */) {
  * 255, 16 => 'ff'
  * 2, 2    => '10'
  */
-function numberToStringInBase(/* number, base */) {
-  throw new Error('Not implemented');
+function numberToStringInBase(number, base) {
+  return number.toString(base);
 }
 
 /**
